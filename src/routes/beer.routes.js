@@ -1,20 +1,17 @@
 /* eslint-disable import/no-named-as-default-member */
 import { Router } from 'express'
-import {
-    loadBeer,
-    createBeer,
-    listBeers,
-    updateBeer,
-    removeBeer,
-    getBeer,
-} from '../controllers/beer.controller'
+import BeerController from '../controllers/beer.controller'
 
 const router = Router()
 
-router.route('/').get(listBeers).post(createBeer)
+router.route('/').get(BeerController.list).post(BeerController.create)
 
-router.route('/:beerId').get(getBeer).put(updateBeer).delete(removeBeer)
+router
+    .route('/:beerId')
+    .get(BeerController.get)
+    .put(BeerController.update)
+    .delete(BeerController.remove)
 
-router.param('beerId', loadBeer)
+router.param('beerId', BeerController.load)
 
 export default router
