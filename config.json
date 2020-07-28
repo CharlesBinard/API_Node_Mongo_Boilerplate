@@ -1,0 +1,8 @@
+{
+    "port": "5000",
+    "mongo": {      
+        "url": "mongo",
+        "port": "27017",
+        "dataBase": "api_node"
+    }
+}

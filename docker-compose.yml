@@ -1,0 +1,21 @@
+version: "3.8" 
+
+services:
+  api: 
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node_little_api
+    ports:
+      - "5000:5000" 
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    links:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    container_name: mongo_little_api
+    ports:
+      - "27017:27017" # specify port forewarding

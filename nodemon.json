@@ -1,0 +1,13 @@
+{
+    "verbose": false,
+    "env": {
+      "DEBUG": true
+    },
+    "watch": [
+      "index.js",
+      "config.json",
+      "package.json",
+      "src/"
+    ]
+  }
+  
