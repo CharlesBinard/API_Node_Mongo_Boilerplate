@@ -9,6 +9,7 @@ router.route('/').get(BeerController.list).post(BeerController.create)
 router
     .route('/:beerId')
     .get(BeerController.get)
+    .post(BeerController.create)
     .put(BeerController.update)
     .delete(BeerController.remove)
 

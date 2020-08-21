@@ -8,9 +8,10 @@ services:
     container_name: node_little_api
     ports:
       - "5000:5000" 
+    tty: true
     volumes:
-      - ./:/usr/src/app
-      - /usr/src/app/node_modules
+      - .:/usr/src/app
+      # - /usr/src/app/node_modules
     links:
       - mongo
 
@@ -18,4 +19,4 @@ services:
     image: mongo:latest
     container_name: mongo_little_api
     ports:
-      - "27017:27017" # specify port forewarding
+      - "27017:27017"
