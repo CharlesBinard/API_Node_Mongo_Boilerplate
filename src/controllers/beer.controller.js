@@ -1,4 +1,24 @@
+import Joi from 'joi'
 import BeerModel from '../models/beer.model'
+
+const validation = {
+    create: {
+        body: Joi.object({
+            name: Joi.string().min(3).required().required(),
+            description: Joi.string().min(3).required().required(),
+            note: Joi.number().integer().min(0).max(5).required(),
+            author: Joi.string().min(3).required(),
+        }),
+    },
+    update: {
+        body: Joi.object({
+            name: Joi.string().min(3).required(),
+            description: Joi.string().min(3).required(),
+            note: Joi.number().integer().min(0).max(5),
+            author: Joi.string().min(3).required(),
+        }),
+    },
+}
 
 const load = (req, res, next, id) => {
     if (!id.match(/^[0-9a-fA-F]{24}$/)) {
@@ -71,4 +91,5 @@ export default {
     update,
     remove,
     list,
+    validation,
 }
