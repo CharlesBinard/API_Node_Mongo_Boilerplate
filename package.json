@@ -18,7 +18,7 @@
     "mongoose": "^5.9.25",
     "morgan": "^1.10.0",
     "nconf": "^0.10.0",
-    "node-notifier": "^8.0.0"
+    "node-notifier": "^8.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
